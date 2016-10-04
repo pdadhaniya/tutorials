@@ -12,11 +12,41 @@
     <script src="https://unpkg.com/remarkable@1.7.1/dist/remarkable.min.js"></script>
   </head>
   <body>
-    <div id="content"></div>
-    <script type="text/babel" src="scripts/example.js"></script>
+    <div id="parag"></div>
     <script type="text/babel">
-      // To get started with this tutorial running your own code, simply remove
-      // the script tag loading scripts/example.js and start writing code here.
+      var CommentBox = React.createClass({
+        render: function() {
+          return (
+            <div className="commentBox">
+              <h1>Comments</h1>
+              <CommentList />
+              <CommentForm />
+            </div>
+          );
+        }
+      });
+      var CommentList = React.createClass({
+        render: function() {
+          return (
+            <div className="commentList">
+              Hello World! I'm a commentlist.
+            </div>
+          );
+        }
+      });
+      var CommentForm = React.createClass({
+        render: function() {
+          return (
+            <div className="commentForm">
+              Hello World! I'm a commentForm.
+            </div>
+          );
+        }
+      });
+      ReactDOM.render(
+        <CommentBox />,
+        document.getElementById('parag')
+      );
     </script>
   </body>
 </html>
